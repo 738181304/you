@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم اختراقك بنجاح</title>
+    <style>
+        body {
+            background-color: black; /* خلفية سوداء */
+            color: red; /* لون الكتابة أحمر */
+            font-family: 'Arial', sans-serif;
+            text-align: center; /* توسيط النص */
+            margin-top: 20%;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px red, 0 0 20px red; /* ظل النص */
+        }
+        p, #countdown {
+            font-size: 1.5em;
+            text-shadow: 0 0 5px red, 0 0 10px red;
+        }
+    </style>
+</head>
+<body>
+    <h1>تم اختراقك بنجاح!</h1>
+    <p>لتفادي الاختراق، يجب إطفاء الهاتف بالكامل لمدة ساعة.</p>
+    <p>والآن سيبدأ العد التنازلي من 30 إلى صفر:</p>
+    <div id="countdown">30 ثانية</div>
+    <script>
+        var countdownTime = 30;
+        var countdownDisplay = document.getElementById("countdown");
+
+        var x = setInterval(function() {
+            countdownDisplay.innerHTML = countdownTime + " ثانية";
+
+            countdownTime--;
+
+            if (countdownTime < 0) {
+                clearInterval(x);
+                countdownDisplay.innerHTML = "انتهى العد التنازلي!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
